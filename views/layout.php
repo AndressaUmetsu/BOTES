@@ -18,7 +18,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href='?controller=aeroportos&action=index'>Home</a></li>
+          <li><a href='/'>Home</a></li>
           <li><a href='?controller=aeroportos&action=index'>Aeroportos</a></li>
         </ul>
       </div>
@@ -29,7 +29,7 @@
     
     <footer class="footer">
       <div class="container">
-        <p class="text-muted">© 2016 - Andressa e Ricardo. Todos os direitos reservados. </p>
+        <p class="text-muted">© 2016 - A&R. Todos os direitos reservados. </p>
       </div>
     </footer> 
 

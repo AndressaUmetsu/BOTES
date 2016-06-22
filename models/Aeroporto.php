@@ -32,6 +32,33 @@ Class Aeroporto {
       	return $list;
     }
 
+	public static function register($nome, $quantidadeAvioes) {
+		if(empty($nome) || empty($quantidadeAvioes))
+			return false;
+
+      	$db = Database::getInstance();
+      	$request = $db->prepare('INSERT into aeroportos (nome, quantidadeAvioes) values (:name, :qtd)');
+      	
+      	if ($request->execute(array('name' => $nome, 'qtd' => $quantidadeAvioes)))
+      		return true;
+
+      	return false;
+    }
+
+    public static function delete($id) {
+    	if(empty($id))
+    		return false;
+
+    	$db = Database::getInstance();
+    	$request = $db->prepare('DELETE from aeroportos WHERE idAeroporto = :id');
+
+    	if($request->execute(array('id' => $id))){
+    		return true;
+    	}
+
+    	return false;
+    }
+
     public static function find($id) {
       $db = Database::getInstance();
       // Validamos se o $id é um inteiro
@@ -40,6 +67,19 @@ Class Aeroporto {
       // A query foi preparada, agora substituimos o :id pelo $id real
       $request->execute(array('id' => $id));
       $aeroporto = $request->fetch();
+
+      return new Aeroporto($aeroporto['idAeroporto'], $aeroporto['nome'], $aeroporto['quantidadeAvioes']);
+    }
+
+    public static function findByName($nome) {
+      $db = Database::getInstance();
+      $request = $db->prepare('SELECT * FROM aeroportos WHERE nome = :name');
+      // A query foi preparada, agora substituimos o :id pelo $id real
+      $request->execute(array('name' => $nome));
+      $aeroporto = $request->fetch();
+      
+      if($aeroporto['idAeroporto'] == NULL)
+      	return NULL;
 
       return new Aeroporto($aeroporto['idAeroporto'], $aeroporto['nome'], $aeroporto['quantidadeAvioes']);
     }
@@ -64,8 +104,7 @@ Class Aeroporto {
 		return $this->qtdAvioes;
 	}
 
-	//Funções de Adicionar, editar e excluir
-	public function salvar(){}
+	//Funções de editar e excluir
 	public function editar(){}
 	public function excluir(){}
 }

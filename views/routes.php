@@ -24,7 +24,7 @@
   // Consideramos esses valores como sendo os 'permitidos'
   $controllers = array(
     'pages' => ['home', 'error'],
-    'aeroportos' => ['index', 'show']
+    'aeroportos' => ['index', 'show', 'register', 'delete']
   );
 
   // Verifica se o controller e a action são válidas

@@ -1,6 +1,6 @@
 CREATE TABLE aeroportos
 (
-	idAeroporto int, 
+	idAeroporto int UNSIGNED AUTO_INCREMENT, 
 	nome varchar(50)
 	quantidadeAvioes int, 
 	PRIMARY KEY (idAeroporto)
@@ -8,7 +8,7 @@ CREATE TABLE aeroportos
 
 CREATE TABLE modelos
 (
-	idModelo int, 
+	idModelo int UNSIGNED AUTO_INCREMENT, 
 	peso float, 
 	capacidade int, 
 	nome varchar(50),
@@ -18,13 +18,12 @@ CREATE TABLE modelos
 CREATE TABLE avioes 
 (
 	registro int, 
-	idModelo int, 
-	idAeroporto int, 
+	idModelo int UNSIGNED, 
+	idAeroporto int UNSIGNED, 
 	PRIMARY KEY (registro), 
 	FOREIGN KEY (idAeroporto) REFERENCES aeroportos(idAeroporto),
 	FOREIGN KEY (idModelo) REFERENCES modelos(idModelo)
 );
-
 
 
 CREATE TABLE sindicatos
@@ -41,7 +40,7 @@ CREATE TABLE empregados
 	telefone varchar(15), 
 	salário float, 
 	endereco varchar(50), 
-	idAeroporto int, 
+	idAeroporto int UNSIGNED, 
 	nroMembro int, 
 	PRIMARY KEY (matricula),
 	FOREIGN KEY (idAeroporto) REFERENCES aeroportos(idAeroporto),
@@ -51,7 +50,7 @@ CREATE TABLE empregados
 CREATE TABLE tecnicos
 (
 	matricula int, 
-	idModelo int,
+	idModelo int UNSIGNED,
 	PRIMARY KEY (matricula), 	
 	FOREIGN KEY (matricula) REFERENCES empregados(matricula),
 	FOREIGN KEY (idModelo) REFERENCES modelos(idModelo)
@@ -73,9 +72,9 @@ CREATE TABLE testes
 );
 
 CREATE TABLE manutencao(
-	idManutencao int,
+	idManutencao int UNSIGNED AUTO_INCREMENT,
 	nroAnac int, 
-	idModelo int, 
+	idModelo int UNSIGNED, 
 	matricula int, 
 	dataTeste varchar(10), 
 	horasGastas float, 

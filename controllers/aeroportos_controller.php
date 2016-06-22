@@ -16,5 +16,37 @@
       $aeroporto = Aeroporto::find($_GET['id']);
       require_once('views/aeroportos/show.php');
     }
+
+    public function register() {
+      if (!isset($_POST['action']) | empty($_POST['action']) | !isset($_POST['inputNomeAeroporto']) | empty($_POST['inputNomeAeroporto']) |
+          !isset($_POST['inputQtdAvioes']) | empty($_POST['inputQtdAvioes']))
+        return call('pages', 'error');
+
+      $nome = $_POST['inputNomeAeroporto'];
+      $qtd = $_POST['inputQtdAvioes'];
+
+      $aeroporto = Aeroporto::findByName(($_POST['inputNomeAeroporto']));
+      if($aeroporto){
+        echo "<strong>Oops!</strong> Parece que já existe um aeroporto com este nome!";
+      }else{
+        if (Aeroporto::register($nome, $qtd)){
+            echo "<strong>Sucesso!</strong> O cadastro foi efetuado com sucesso!";
+        }else{
+            echo "<strong>Erro!</strong> Ocorreu um problema ao guardar os dados! Tente novamente mais tarde.";
+        }
+      }
+    }
+
+    public function delete() {
+      //if (!isset($_POST['action']) | empty($_POST['action']) | !isset($_POST['id']) | empty($_POST['id']))
+      //  return call('pages', 'error');
+
+      $id = $_POST['id'];
+      if (Aeroporto::delete($id)){
+        echo "Aeroporto excLuído com sucesso!";
+      }else{
+        echo "Falha ao excluir aeroporto. Tente novamente mais tarde.";
+      }
+    }
   }
 ?>
