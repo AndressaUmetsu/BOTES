@@ -38,14 +38,31 @@
     }
 
     public function delete() {
-      //if (!isset($_POST['action']) | empty($_POST['action']) | !isset($_POST['id']) | empty($_POST['id']))
-      //  return call('pages', 'error');
+      if (!isset($_POST['id']) | empty($_POST['id']))
+        return call('pages', 'error');
 
       $id = $_POST['id'];
       if (Aeroporto::delete($id)){
-        echo "Aeroporto excLuído com sucesso!";
+        echo "Aeroporto excluído com sucesso!";
       }else{
         echo "Falha ao excluir aeroporto. Tente novamente mais tarde.";
+      }
+    }
+//inputAlterIdAeroporto=9&inputAlterNomeAeroporto=Senhor+Alguem+de+Loyola+Joinville&inputAlterQtdAvioes=151&action=edit
+    public function edit() {
+      if (!isset($_POST['inputAlterIdAeroporto']) | empty($_POST['inputAlterIdAeroporto']) | 
+          !isset($_POST['inputAlterNomeAeroporto']) | empty($_POST['inputAlterNomeAeroporto']) | 
+          !isset($_POST['inputAlterQtdAvioes']) | empty($_POST['inputAlterQtdAvioes']))
+        return call('pages', 'error');
+
+      $id = $_POST['inputAlterIdAeroporto'];
+      $nome = $_POST['inputAlterNomeAeroporto'];
+      $qtd = $_POST['inputAlterQtdAvioes'];
+
+      if(Aeroporto::edit($id, $nome, $qtd)){
+        echo "Aeroporto alterado com sucesso!";
+      }else{
+        echo "Falha ao alterar aeroporto. Tente novamente mais tarde.";
       }
     }
   }

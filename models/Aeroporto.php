@@ -59,6 +59,19 @@ Class Aeroporto {
     	return false;
     }
 
+    public static function edit($id, $nome, $qtd) {
+      if(empty($id) | empty($nome) | empty($qtd))
+        return false;
+
+      $db = Database::getInstance();
+      $request = $db->prepare('UPDATE aeroportos SET nome = :name, quantidadeAvioes = :qtd WHERE idAeroporto = :id');
+
+      if($request->execute(array('id' => $id, 'name' => $nome, 'qtd' => $qtd))) {
+        return true;
+      }
+
+      return false;
+    }
     public static function find($id) {
       $db = Database::getInstance();
       // Validamos se o $id é um inteiro

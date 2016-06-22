@@ -20,7 +20,7 @@
 		<td><?php echo $aeroporto->getNome(); ?></td>
 		<td class="tcenter"><?php echo $aeroporto->getQtdAvioes(); ?></td>
 		<td class="tcenter">
-			<a href="#" class="editButton" data-toggle="modal" data-target="#modalEditar"><img src="images/edit.png" title="Editar" width="16" height="16"></a>
+			<a href="#" class="editar" data-toggle="modal" data-target="#modalEditar"><img src="images/edit.png" title="Editar" width="16" height="16"></a>
 			<a href="#" onclick="delAeroporto(<?php echo $aeroporto->getID();?>)"><img src="images/delete.png" title="Excluir" width="16" height="16"></a>
 		</td>
 	</tr>
@@ -89,13 +89,14 @@
                 <h4 class="modal-title" id="labelCadastro">Alteração de Aeroporto</h4>
             </div>
             
-            <form class="form-horizontal" role="form" method="POST" action="/" id="alteracaoAeroporto">
+            <form class="form-horizontal" role="form" method="POST" action="/" id="alterarAeroporto">
 	            <!-- Modal Body -->
 	            <div class="modal-body">
 	                  <div id="validation"></div>
 	                  <div class="form-group">
 	                    <label  class="col-sm-2 control-label" for="inputAlterNome">Nome:</label>
 	                    <div class="col-sm-10">
+	                    	<input type="hidden" id="inputAlterIdAeroporto" name="inputAlterIdAeroporto"/>
 	                        <input type="text" class="form-control" id="inputAlterNomeAeroporto" name="inputAlterNomeAeroporto" placeholder="Informe o novo nome do aeroporto"/>
 	                    </div>
 	                  </div>
