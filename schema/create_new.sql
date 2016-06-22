@@ -1,7 +1,8 @@
 CREATE TABLE aeroportos
 (
 	idAeroporto int, 
-	quantidadeModelo int, 
+	nome varchar(50)
+	quantidadeAvioes int, 
 	PRIMARY KEY (idAeroporto)
 );
 

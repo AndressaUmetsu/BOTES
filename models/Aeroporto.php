@@ -2,13 +2,21 @@
 
 Class Aeroporto {
 
+	/*
+	CHANGELOG ER:
+	- Adicionado campo 'nome'
+	- Renomeado 'quantidadeModelo' para 'quantidadeAvioes'
+	*/
+
 	//Atributos da classe
 	private $id;
-	private $qtdModelo;
+	private $nome;
+	private $qtdAvioes;
 
-	public function __construct($id, $qtdModelo){
+	public function __construct($id, $nome, $qtdAvioes){
 		$this->id = $id;
-		$this->qtdModelo = $qtdModelo;
+		$this->nome = $nome;
+		$this->qtdAvioes = $qtdAvioes;
 	}
 
 	public static function all() {
@@ -18,7 +26,7 @@ Class Aeroporto {
 
       	// we create a list of Post objects from the database results
       	foreach($request->fetchAll() as $aeroporto) {
-     	   $list[] = new Aeroporto($aeroporto['idAeroporto'], $aeroporto['quantidadeModelo']);
+     	   $list[] = new Aeroporto($aeroporto['idAeroporto'], $aeroporto['nome'], $aeroporto['quantidadeAvioes']);
      	 }
 
       	return $list;
@@ -33,7 +41,7 @@ Class Aeroporto {
       $request->execute(array('id' => $id));
       $aeroporto = $request->fetch();
 
-      return new Aeroporto($aeroporto['idAeroporto'], $aeroporto['quantidadeModelo']);
+      return new Aeroporto($aeroporto['idAeroporto'], $aeroporto['nome'], $aeroporto['quantidadeAvioes']);
     }
 
 	//Getters e setters
@@ -43,26 +51,23 @@ Class Aeroporto {
 	public function getID(){
 		return $this->id;
 	}
-	public function setQtdModelo($qtdModelo){
-		$this->qtdModelo = $qtdModelo;
+	public function setNome($nome){
+		$this->nome = $nome;
 	}
-	public function getQtdModelo(){
-		return $this->qtdModelo;
+	public function getNome(){
+		return $this->nome;
 	}
-
+	public function setQtdAvioes($qtdAvioes){
+		$this->qtdAvioes = $qtdAvioes;
+	}
+	public function getQtdAvioes(){
+		return $this->qtdAvioes;
+	}
 
 	//Funções de Adicionar, editar e excluir
-	public function salvar(){
-
-	}
-
-	public function editar(){
-
-	}
-
-	public function excluir(){
-		
-	}
+	public function salvar(){}
+	public function editar(){}
+	public function excluir(){}
 }
 
 ?>
