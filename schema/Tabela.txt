@@ -1,0 +1,19 @@
+AVIÕES (#Registro, &IdModelo, &idAeroporto)
+
+MODELOS (#IdModelo, Peso, Capacidade, Nome, &IdAviões)
+
+AEROPORTOS (#IdAeroporto, QuantidadeModelo)
+
+EMPREGADOS (#Matricula, Nome, Telefone, Endereço, Salário, &IdAeroporto, &IdSindicato)
+
+TECNICOS (#&Matricula)
+
+CONTROLADORES (#&Matricula, ExameMaisRecente)
+
+SINDICATOS (#IdSindicato, Nome)
+
+PERITOS (#&Matricula, #&IdModelo)
+
+TESTES (#NroAnac, Nome)
+
+MANUTENÇÕES (#&NroAnac, &IdModelo, &Matricula, DataTeste, HorasGastas, PontuacaoObtida)

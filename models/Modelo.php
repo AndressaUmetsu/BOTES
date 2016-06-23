@@ -4,8 +4,8 @@ Class Modelo {
 
 	/*
 	CHANGELOG PARA O ER:
-	- Renomeado atributo "modelo" para "nome"
-	- Removido atributo idAeroporto (Não faz sentido ter 'idAeroporto' na table 'modelos', só na 'avioes')
+	- Renomeado atributo "modelo" para "nome" DONE
+	- Removido atributo idAeroporto (Não faz sentido ter  'idAeroporto' na table 'modelos', só na 'avioes') DONE
 	
 	*/
 

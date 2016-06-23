@@ -4,8 +4,8 @@ Class Aeroporto {
 
 	/*
 	CHANGELOG ER:
-	- Adicionado campo 'nome'
-	- Renomeado 'quantidadeModelo' para 'quantidadeAvioes'
+	- Adicionado campo 'nome' DONE
+	- Renomeado 'quantidadeModelo' para 'quantidadeAvioes' DONE
 	*/
 
 	//Atributos da classe
