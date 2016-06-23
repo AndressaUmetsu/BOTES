@@ -20,6 +20,8 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href='/'>Home</a></li>
           <li><a href='?controller=aeroportos&action=index'>Aeroportos</a></li>
+          <li><a href='?controller=modelos&action=index'>Modelos</a></li>
+          <li><a href='?controller=avioes&action=index'>Aviões</a></li>
         </ul>
       </div>
     </nav>

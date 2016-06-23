@@ -4,7 +4,7 @@ Class Teste {
 
 	/*
 	CHANGELOG PARA O ER:
-	-Movido o atributo 'pontuacao' para a tabela 'manutencao' DONE 
+	-Movido o atributo 'pontuacao' para a tabela 'manutencao'
 	*/ 
 
 	//Atributos da classe

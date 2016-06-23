@@ -4,7 +4,7 @@ Class Manutencao {
 
 	/*
 	CHANGELOG PARA O ER:
-	- Atributo 'dataTeste' renomeado pra 'data' DONE
+	- Atributo 'dataTeste' renomeado pra 'data'
 	*/
 
 	//Atributos da classe

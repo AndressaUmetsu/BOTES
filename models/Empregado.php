@@ -4,7 +4,7 @@ Class Empregado {
 
 	/*
 	CHANGELOG PARA O ER:
-		- Atributo 'nroMembro' pode ser renomado para 'idSindicato'  DONE
+		- Atributo 'nroMembro' pode ser renomado para 'idSindicato'
 	*/
 
 	//Atributos da classe

@@ -4,7 +4,7 @@ Class Sindicato {
 
 	/*
 	CHANGELOG PARA O ER:
-	- Atributo 'nroMembro' renomeado para 'id' DONE
+	- Atributo 'nroMembro' renomeado para 'id'
 	*/
 
 	//Atributos da classe

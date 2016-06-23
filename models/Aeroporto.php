@@ -4,8 +4,8 @@ Class Aeroporto {
 
 	/*
 	CHANGELOG ER:
-	- Adicionado campo 'nome' DONE
-	- Renomeado 'quantidadeModelo' para 'quantidadeAvioes' DONE
+	- Adicionado campo 'nome'
+	- Renomeado 'quantidadeModelo' para 'quantidadeAvioes'
 	*/
 
 	//Atributos da classe
@@ -21,15 +21,15 @@ Class Aeroporto {
 
 	public static function all() {
 		$list = [];
-      	$db = Database::getInstance();
-      	$request = $db->query('SELECT * FROM aeroportos');
+      $db = Database::getInstance();
+      $request = $db->query('SELECT * FROM aeroportos');
 
-      	// we create a list of Post objects from the database results
-      	foreach($request->fetchAll() as $aeroporto) {
-     	   $list[] = new Aeroporto($aeroporto['idAeroporto'], $aeroporto['nome'], $aeroporto['quantidadeAvioes']);
-     	 }
+      // we create a list of Post objects from the database results
+      foreach($request->fetchAll() as $aeroporto) {
+     	  $list[] = new Aeroporto($aeroporto['idAeroporto'], $aeroporto['nome'], $aeroporto['quantidadeAvioes']);
+     	}
 
-      	return $list;
+      return $list;
     }
 
 	public static function register($nome, $quantidadeAvioes) {
@@ -116,10 +116,6 @@ Class Aeroporto {
 	public function getQtdAvioes(){
 		return $this->qtdAvioes;
 	}
-
-	//Funções de editar e excluir
-	public function editar(){}
-	public function excluir(){}
 }
 
 ?>
